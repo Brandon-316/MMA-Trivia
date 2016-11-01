@@ -12,6 +12,8 @@
 		73DC50DD1D970102008EE49B /* Boxing Bell End Round.wav in Resources */ = {isa = PBXBuildFile; fileRef = 73DC50DB1D970102008EE49B /* Boxing Bell End Round.wav */; };
 		73DC50DE1D970102008EE49B /* Boxing Bell Start Round.wav in Resources */ = {isa = PBXBuildFile; fileRef = 73DC50DC1D970102008EE49B /* Boxing Bell Start Round.wav */; };
 		84598E911DC83AF0002B44B1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84598E901DC83AF0002B44B1 /* Default-568h@2x.png */; };
+		84598E941DC848CD002B44B1 /* CorrectSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84598E921DC848CD002B44B1 /* CorrectSound.wav */; };
+		84598E951DC848CD002B44B1 /* IncorrectSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84598E931DC848CD002B44B1 /* IncorrectSound.wav */; };
 		97093D3C1C913506001275BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97093D3B1C913506001275BC /* AppDelegate.swift */; };
 		97093D3E1C913506001275BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97093D3D1C913506001275BC /* ViewController.swift */; };
 		97093D411C913506001275BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97093D3F1C913506001275BC /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 		73DC50DB1D970102008EE49B /* Boxing Bell End Round.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "Boxing Bell End Round.wav"; path = "MMA Trivia/Boxing Bell End Round.wav"; sourceTree = "<group>"; };
 		73DC50DC1D970102008EE49B /* Boxing Bell Start Round.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "Boxing Bell Start Round.wav"; path = "MMA Trivia/Boxing Bell Start Round.wav"; sourceTree = "<group>"; };
 		84598E901DC83AF0002B44B1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		84598E921DC848CD002B44B1 /* CorrectSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = CorrectSound.wav; path = "MMA Trivia/CorrectSound.wav"; sourceTree = "<group>"; };
+		84598E931DC848CD002B44B1 /* IncorrectSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = IncorrectSound.wav; path = "MMA Trivia/IncorrectSound.wav"; sourceTree = "<group>"; };
 		97093D381C913506001275BC /* MMA Trivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MMA Trivia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97093D3B1C913506001275BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "MMA Trivia/AppDelegate.swift"; sourceTree = "<group>"; };
 		97093D3D1C913506001275BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "MMA Trivia/ViewController.swift"; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 				97093D471C913506001275BC /* Info.plist */,
 				73DC50DB1D970102008EE49B /* Boxing Bell End Round.wav */,
 				73DC50DC1D970102008EE49B /* Boxing Bell Start Round.wav */,
+				84598E921DC848CD002B44B1 /* CorrectSound.wav */,
+				84598E931DC848CD002B44B1 /* IncorrectSound.wav */,
 			);
 			name = "MMA Trivia";
 			sourceTree = "<group>";
@@ -139,7 +145,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84598E951DC848CD002B44B1 /* IncorrectSound.wav in Resources */,
 				97093D461C913506001275BC /* LaunchScreen.storyboard in Resources */,
+				84598E941DC848CD002B44B1 /* CorrectSound.wav in Resources */,
 				97093D431C913506001275BC /* Assets.xcassets in Resources */,
 				73DC50DE1D970102008EE49B /* Boxing Bell Start Round.wav in Resources */,
 				97093D411C913506001275BC /* Main.storyboard in Resources */,

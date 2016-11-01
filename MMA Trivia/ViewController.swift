@@ -18,8 +18,11 @@ class ViewController: UIViewController {
     var correctQuestions = 0
     var indexOfSelectedQuestion: Int = 0
     
-    var gameSound: SystemSoundID = 0
-    var gameSound2: SystemSoundID = 1
+    var startSound: SystemSoundID = 0
+    var endSound: SystemSoundID = 1
+    var correctSound: SystemSoundID = 2
+    var incorrectSound: SystemSoundID = 3
+    
     
     var countdown = Timer()
     var count = 15
@@ -93,10 +96,14 @@ class ViewController: UIViewController {
             correctQuestions += 1
             questionField.text = "Correct!"
             countdown.invalidate()
+            loadCorrectSound()
+            playCorrectAnswer()
         } else {
             questionField.text = "Sorry, wrong answer!"
             countdown.invalidate()
             highlightCorrect()
+            loadIncorrectSound()
+            playIncorrectAnswer()
         }
         loadNextRoundWithDelay(seconds: 2)
     }
@@ -198,22 +205,42 @@ class ViewController: UIViewController {
     func loadGameStartSound() {
         let pathToSoundFile = Bundle.main.path(forResource: "Boxing Bell Start Round", ofType: "wav")
         let soundURL = URL(fileURLWithPath: pathToSoundFile!)
-        AudioServicesCreateSystemSoundID(soundURL as CFURL, &gameSound)
+        AudioServicesCreateSystemSoundID(soundURL as CFURL, &startSound)
     }
     
     func playGameStartSound() {
-        AudioServicesPlaySystemSound(gameSound)
+        AudioServicesPlaySystemSound(startSound)
     }
     
 
     func loadGameEndSound() {
         let pathToSoundFile = Bundle.main.path(forResource: "Boxing Bell End Round", ofType: "wav")
         let soundURL = URL(fileURLWithPath: pathToSoundFile!)
-        AudioServicesCreateSystemSoundID(soundURL as CFURL, &gameSound2)
+        AudioServicesCreateSystemSoundID(soundURL as CFURL, &endSound)
     }
     
     func playGameEndSound() {
-        AudioServicesPlaySystemSound(gameSound2)
+        AudioServicesPlaySystemSound(endSound)
+    }
+    
+    func loadCorrectSound() {
+        let pathToSoundFile = Bundle.main.path(forResource: "CorrectSound", ofType: "wav")
+        let soundURL = URL(fileURLWithPath: pathToSoundFile!)
+        AudioServicesCreateSystemSoundID(soundURL as CFURL, &correctSound)
+    }
+    
+    func playCorrectAnswer() {
+        AudioServicesPlaySystemSound(correctSound)
+    }
+    
+    func loadIncorrectSound() {
+        let pathToSoundFile = Bundle.main.path(forResource: "IncorrectSound", ofType: "wav")
+        let soundURL = URL(fileURLWithPath: pathToSoundFile!)
+        AudioServicesCreateSystemSoundID(soundURL as CFURL, &incorrectSound)
+    }
+    
+    func playIncorrectAnswer() {
+        AudioServicesPlaySystemSound(incorrectSound)
     }
     
 }
