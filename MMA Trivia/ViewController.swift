@@ -52,8 +52,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         assignQuestions()
         // Start game
-//        loadGameSound(resource: startSoundFile, type: soundType, sound: &startSound)
-//        playSound(sound: startSound)
         playSound(resource: startSoundFile, type: soundType, sound: &startSound)
         displayQuestion()
     }
@@ -63,37 +61,8 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func assignQuestions() {
-        for questionData in Questions().library {
-            let question = QuestionDetail(dictionary: questionData)
-            trivia.append(question)
-        }
-    }
-    
-    func displayQuestion() {
-        indexOfSelectedQuestion = GKRandomSource.sharedRandom().nextInt(upperBound: trivia.count)
-        let questionDictionary = trivia[indexOfSelectedQuestion]
-        questionField.text = questionDictionary.question
-        button1.setTitle(questionDictionary.option1, for: .normal)
-        button2.setTitle(questionDictionary.option2, for: .normal)
-        button3.setTitle(questionDictionary.option3, for: .normal)
-        button4.setTitle(questionDictionary.option4, for: .normal)
-        playAgainButton.isHidden = true
-        startCountdown()
-    }
-    
-    func displayScore() {
-        // Hide the answer buttons
-        button1.isHidden = true
-        button2.isHidden = true
-        button3.isHidden = true
-        button4.isHidden = true
-        // Display play again button
-        playAgainButton.isHidden = false
-        
-        questionField.text = "Way to go!\nYou got \(correctQuestions) out of \(questionsPerRound) correct!"
-    }
-    
+
+//Actions//
     @IBAction func checkAnswer(_ sender: UIButton) {
         // Increment the questions asked counter
         questionsAsked += 1
@@ -113,7 +82,51 @@ class ViewController: UIViewController {
             playSound(resource: incorrectSoundFile, type: soundType, sound: &incorrectSound)
         }
         loadNextRoundWithDelay(seconds: 2)
-//        self.trivia.remove(at: self.indexOfSelectedQuestion)
+    }
+    
+    @IBAction func playAgain() {
+        // Show the answer buttons
+        buttonsAreHidden(areButtonsHidden: false)
+        questionsAsked = 0
+        correctQuestions = 0
+        nextRound()
+        playSound(resource: startSoundFile, type: soundType, sound: &startSound)
+    }
+    
+//Functions//
+    func assignQuestions() {
+        for questionData in Questions().library {
+            let question = QuestionDetail(dictionary: questionData)
+            trivia.append(question)
+        }
+    }
+    
+    func displayQuestion() {
+        indexOfSelectedQuestion = GKRandomSource.sharedRandom().nextInt(upperBound: trivia.count)
+        let questionDictionary = trivia[indexOfSelectedQuestion]
+        questionField.text = questionDictionary.question
+        button1.setTitle(questionDictionary.option1, for: .normal)
+        button2.setTitle(questionDictionary.option2, for: .normal)
+        button3.setTitle(questionDictionary.option3, for: .normal)
+        button4.setTitle(questionDictionary.option4, for: .normal)
+        playAgainButton.isHidden = true
+        startCountdown()
+    }
+    
+    func buttonsAreHidden(areButtonsHidden: Bool) {
+        let buttons = [button1, button2, button3, button4]
+        for button in buttons {
+            button?.isHidden = areButtonsHidden
+        }
+    }
+    
+    func displayScore() {
+        // Hide the answer buttons
+        buttonsAreHidden(areButtonsHidden: true)
+        // Display play again button
+        playAgainButton.isHidden = false
+        
+        questionField.text = "Way to go!\nYou got \(correctQuestions) out of \(questionsPerRound) correct!"
     }
     
     func nextRound() {
@@ -126,19 +139,6 @@ class ViewController: UIViewController {
             // Continue game
             displayQuestion()
         }
-    }
-    
-    @IBAction func playAgain() {
-        // Show the answer buttons
-        button1.isHidden = false
-        button2.isHidden = false
-        button3.isHidden = false
-        button4.isHidden = false
-        
-        questionsAsked = 0
-        correctQuestions = 0
-        nextRound()
-        playSound(resource: startSoundFile, type: soundType, sound: &startSound)
     }
     
 
@@ -202,9 +202,7 @@ class ViewController: UIViewController {
     }
     
     
-    
-    
-    
+
 //Game Sounds
     func playSound(resource: String, type: String, sound: inout SystemSoundID) {
         let pathToSoundFile = Bundle.main.path(forResource: resource, ofType: type)
@@ -214,4 +212,3 @@ class ViewController: UIViewController {
     }
     
 }
-
