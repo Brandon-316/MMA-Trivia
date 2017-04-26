@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "97093D371C913506001275BC"
-               BuildableName = "TrueFalseStarter.app"
+               BuildableName = "MMA Trivia.app"
                BlueprintName = "TrueFalseStarter"
                ReferencedContainer = "container:MMA Trivia.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "97093D371C913506001275BC"
-            BuildableName = "TrueFalseStarter.app"
+            BuildableName = "MMA Trivia.app"
             BlueprintName = "TrueFalseStarter"
             ReferencedContainer = "container:MMA Trivia.xcodeproj">
          </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "97093D371C913506001275BC"
-            BuildableName = "TrueFalseStarter.app"
+            BuildableName = "MMA Trivia.app"
             BlueprintName = "TrueFalseStarter"
             ReferencedContainer = "container:MMA Trivia.xcodeproj">
          </BuildableReference>
@@ -75,7 +75,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "97093D371C913506001275BC"
-            BuildableName = "TrueFalseStarter.app"
+            BuildableName = "MMA Trivia.app"
             BlueprintName = "TrueFalseStarter"
             ReferencedContainer = "container:MMA Trivia.xcodeproj">
          </BuildableReference>

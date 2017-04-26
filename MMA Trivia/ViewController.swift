@@ -18,6 +18,14 @@ class ViewController: UIViewController {
     var correctQuestions = 0
     var indexOfSelectedQuestion: Int = 0
     
+    //Sound Clip File Variables//
+    let soundType = "wav"
+    let startSoundFile = "Boxing Bell Start Round"
+    let endSoundFile = "Boxing Bell End Round"
+    let correctSoundFile = "CorrectSound"
+    let incorrectSoundFile = "IncorrectSound"
+    
+    //System Sound ID's//
     var startSound: SystemSoundID = 0
     var endSound: SystemSoundID = 1
     var correctSound: SystemSoundID = 2
@@ -43,9 +51,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         assignQuestions()
-        loadGameStartSound()
         // Start game
-        playGameStartSound()
+//        loadGameSound(resource: startSoundFile, type: soundType, sound: &startSound)
+//        playSound(sound: startSound)
+        playSound(resource: startSoundFile, type: soundType, sound: &startSound)
         displayQuestion()
     }
 
@@ -96,24 +105,22 @@ class ViewController: UIViewController {
             correctQuestions += 1
             questionField.text = "Correct!"
             countdown.invalidate()
-            loadCorrectSound()
-            playCorrectAnswer()
+            playSound(resource: correctSoundFile, type: soundType, sound: &correctSound)
         } else {
             questionField.text = "Sorry, wrong answer!"
             countdown.invalidate()
             highlightCorrect()
-            loadIncorrectSound()
-            playIncorrectAnswer()
+            playSound(resource: incorrectSoundFile, type: soundType, sound: &incorrectSound)
         }
         loadNextRoundWithDelay(seconds: 2)
+//        self.trivia.remove(at: self.indexOfSelectedQuestion)
     }
     
     func nextRound() {
         if questionsAsked == questionsPerRound {
             // Game is over
             displayScore()
-            loadGameEndSound()
-            playGameEndSound()
+            playSound(resource: endSoundFile, type: soundType, sound: &endSound)
             assignQuestions()
         } else {
             // Continue game
@@ -131,8 +138,7 @@ class ViewController: UIViewController {
         questionsAsked = 0
         correctQuestions = 0
         nextRound()
-        loadGameStartSound()
-        playGameStartSound()
+        playSound(resource: startSoundFile, type: soundType, sound: &startSound)
     }
     
 
@@ -147,7 +153,6 @@ class ViewController: UIViewController {
         
         // Executes the nextRound method at the dispatch time on the main queue
         DispatchQueue.main.asyncAfter(deadline: dispatchTime) {
-            self.trivia.remove(at: self.indexOfSelectedQuestion)
             self.resetCount()
             self.nextRound()
             self.unhighlightButtons()
@@ -201,46 +206,11 @@ class ViewController: UIViewController {
     
     
 //Game Sounds
-    
-    func loadGameStartSound() {
-        let pathToSoundFile = Bundle.main.path(forResource: "Boxing Bell Start Round", ofType: "wav")
+    func playSound(resource: String, type: String, sound: inout SystemSoundID) {
+        let pathToSoundFile = Bundle.main.path(forResource: resource, ofType: type)
         let soundURL = URL(fileURLWithPath: pathToSoundFile!)
-        AudioServicesCreateSystemSoundID(soundURL as CFURL, &startSound)
-    }
-    
-    func playGameStartSound() {
-        AudioServicesPlaySystemSound(startSound)
-    }
-    
-
-    func loadGameEndSound() {
-        let pathToSoundFile = Bundle.main.path(forResource: "Boxing Bell End Round", ofType: "wav")
-        let soundURL = URL(fileURLWithPath: pathToSoundFile!)
-        AudioServicesCreateSystemSoundID(soundURL as CFURL, &endSound)
-    }
-    
-    func playGameEndSound() {
-        AudioServicesPlaySystemSound(endSound)
-    }
-    
-    func loadCorrectSound() {
-        let pathToSoundFile = Bundle.main.path(forResource: "CorrectSound", ofType: "wav")
-        let soundURL = URL(fileURLWithPath: pathToSoundFile!)
-        AudioServicesCreateSystemSoundID(soundURL as CFURL, &correctSound)
-    }
-    
-    func playCorrectAnswer() {
-        AudioServicesPlaySystemSound(correctSound)
-    }
-    
-    func loadIncorrectSound() {
-        let pathToSoundFile = Bundle.main.path(forResource: "IncorrectSound", ofType: "wav")
-        let soundURL = URL(fileURLWithPath: pathToSoundFile!)
-        AudioServicesCreateSystemSoundID(soundURL as CFURL, &incorrectSound)
-    }
-    
-    func playIncorrectAnswer() {
-        AudioServicesPlaySystemSound(incorrectSound)
+        AudioServicesCreateSystemSoundID(soundURL as CFURL, &sound)
+        AudioServicesPlaySystemSound(sound)
     }
     
 }
