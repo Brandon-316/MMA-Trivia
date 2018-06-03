@@ -11,6 +11,7 @@ import AudioToolbox
 
 class ViewController: UIViewController {
     
+// MARK: Variables
     var trivia = [QuestionDetail]()
     
     let questionsPerRound = 4
@@ -31,11 +32,10 @@ class ViewController: UIViewController {
     var correctSound: SystemSoundID = 2
     var incorrectSound: SystemSoundID = 3
     
-    
     var countdown = Timer()
     var count = 15
     
-    
+// MARK: Outlets
     @IBOutlet weak var questionField: UILabel!
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
@@ -62,38 +62,9 @@ class ViewController: UIViewController {
     }
     
 
-//Actions//
-    @IBAction func checkAnswer(_ sender: UIButton) {
-        // Increment the questions asked counter
-        questionsAsked += 1
-        
-        let selectedQuestionDict = trivia[indexOfSelectedQuestion]
-        let correctAnswer = selectedQuestionDict.answer
 
-        if (sender === button1 &&  correctAnswer == "1") || (sender === button2 && correctAnswer == "2") || (sender === button3 && correctAnswer == "3") || (sender === button4 && correctAnswer == "4") {
-            correctQuestions += 1
-            questionField.text = "Correct!"
-            countdown.invalidate()
-            playSound(resource: correctSoundFile, type: soundType, sound: &correctSound)
-        } else {
-            questionField.text = "Sorry, wrong answer!"
-            countdown.invalidate()
-            highlightCorrect()
-            playSound(resource: incorrectSoundFile, type: soundType, sound: &incorrectSound)
-        }
-        loadNextRoundWithDelay(seconds: 2)
-    }
     
-    @IBAction func playAgain() {
-        // Show the answer buttons
-        buttonsAreHidden(areButtonsHidden: false)
-        questionsAsked = 0
-        correctQuestions = 0
-        nextRound()
-        playSound(resource: startSoundFile, type: soundType, sound: &startSound)
-    }
-    
-//Functions//
+// MARK: Functions
     func assignQuestions() {
         for questionData in Questions().library {
             let question = QuestionDetail(dictionary: questionData)
@@ -144,7 +115,6 @@ class ViewController: UIViewController {
 
     
 // MARK: Helper Methods
-    
     func loadNextRoundWithDelay(seconds: Int) {
         // Converts a delay in seconds to nanoseconds as signed 64 bit integer
         let delay = Int64(NSEC_PER_SEC * UInt64(seconds))
@@ -159,12 +129,12 @@ class ViewController: UIViewController {
         }
     }
     
-//Countdown Timer
+    //Countdown Timer
     func startCountdown() {
     countdown = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.runCountdown), userInfo: nil, repeats: true)
     }
     
-    func runCountdown() {
+    @objc func runCountdown() {
         if (count > 0){
             count -= 1
             countdownLabel.text = String(count)
@@ -179,7 +149,7 @@ class ViewController: UIViewController {
         count = 15
     }
     
-//Highlight correct answer
+    //Highlight correct answer
     func highlightCorrect() {
         let selectedQuestionDict = trivia[indexOfSelectedQuestion]
         let correctAnswer = selectedQuestionDict.answer
@@ -200,15 +170,44 @@ class ViewController: UIViewController {
         button3.isSelected = false
         button4.isSelected = false
     }
-    
-    
 
-//Game Sounds
+    //Game Sounds
     func playSound(resource: String, type: String, sound: inout SystemSoundID) {
         let pathToSoundFile = Bundle.main.path(forResource: resource, ofType: type)
         let soundURL = URL(fileURLWithPath: pathToSoundFile!)
         AudioServicesCreateSystemSoundID(soundURL as CFURL, &sound)
         AudioServicesPlaySystemSound(sound)
     }
-    
+
+
+// MARK: Actions
+    @IBAction func checkAnswer(_ sender: UIButton) {
+        // Increment the questions asked counter
+        questionsAsked += 1
+        
+        let selectedQuestionDict = trivia[indexOfSelectedQuestion]
+        let correctAnswer = selectedQuestionDict.answer
+        
+        if (sender === button1 &&  correctAnswer == "1") || (sender === button2 && correctAnswer == "2") || (sender === button3 && correctAnswer == "3") || (sender === button4 && correctAnswer == "4") {
+            correctQuestions += 1
+            questionField.text = "Correct!"
+            countdown.invalidate()
+            playSound(resource: correctSoundFile, type: soundType, sound: &correctSound)
+        } else {
+            questionField.text = "Sorry, wrong answer!"
+            countdown.invalidate()
+            highlightCorrect()
+            playSound(resource: incorrectSoundFile, type: soundType, sound: &incorrectSound)
+        }
+        loadNextRoundWithDelay(seconds: 2)
+    }
+
+    @IBAction func playAgain() {
+        // Show the answer buttons
+        buttonsAreHidden(areButtonsHidden: false)
+        questionsAsked = 0
+        correctQuestions = 0
+        nextRound()
+        playSound(resource: startSoundFile, type: soundType, sound: &startSound)
+    }
 }
