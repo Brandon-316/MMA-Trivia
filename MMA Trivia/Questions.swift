@@ -47,7 +47,8 @@ struct Questions {
             "Option1": "Michael Bisping",
             "Option2": "Mirko Cro Cop Filipovic",
             "Option3": "Mark Hunt",
-            "Option4": "Dan Hardy",
+            "Option4": "",
+//            "Option4": "Dan Hardy",
             "Answer": "2"
         ],
         [
@@ -55,7 +56,8 @@ struct Questions {
             "Option1": "Chuck Liddell",
             "Option2": "Pat Smith",
             "Option3": "Terry Etim",
-            "Option4": "Jens Pulver",
+            "Option4": "",
+//            "Option4": "Jens Pulver",
             "Answer": "3"
         ],
         [
