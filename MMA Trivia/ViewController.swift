@@ -42,6 +42,10 @@ class ViewController: UIViewController {
     let disabledButtonColor = UIColor.init(hex: "#1A3D52")
     let disabledButtonFontColor = UIColor.init(hex: "#3F5866")
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
 // MARK: Outlets
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
@@ -92,6 +96,9 @@ class ViewController: UIViewController {
     
     // Display question and set button title labels
     func displayQuestion() {
+        // Increment the questions asked counter
+        questionsAsked += 1
+        
         indexOfSelectedQuestion = GKRandomSource.sharedRandom().nextInt(upperBound: trivia.count)
         let questionDictionary = trivia[indexOfSelectedQuestion]
         resultLabel.text = " "
@@ -272,9 +279,6 @@ class ViewController: UIViewController {
 
 // MARK: Actions
     @IBAction func checkAnswer(_ sender: UIButton) {
-        // Increment the questions asked counter
-        questionsAsked += 1
-        
         let selectedQuestionDict = trivia[indexOfSelectedQuestion]
         let correctAnswer = selectedQuestionDict.answer
         

@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MMA Trivia/ViewController.swift"
-            timestampString = "562299981.1306649"
+            timestampString = "562308703.615061"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "buttonsAreHidden(areButtonsHidden:)"
             landmarkType = "7">
          </BreakpointContent>
