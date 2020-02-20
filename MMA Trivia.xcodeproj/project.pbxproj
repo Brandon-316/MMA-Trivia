@@ -14,8 +14,11 @@
 		84598E911DC83AF0002B44B1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84598E901DC83AF0002B44B1 /* Default-568h@2x.png */; };
 		84598E941DC848CD002B44B1 /* CorrectSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84598E921DC848CD002B44B1 /* CorrectSound.wav */; };
 		84598E951DC848CD002B44B1 /* IncorrectSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84598E931DC848CD002B44B1 /* IncorrectSound.wav */; };
+		84B8536323FDF091001A67C4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8536223FDF091001A67C4 /* Extensions.swift */; };
+		84B8536523FE2A79001A67C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8536423FE2A79001A67C4 /* ViewController.swift */; };
+		84B8536723FE4559001A67C4 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8536623FE4559001A67C4 /* Library.swift */; };
 		97093D3C1C913506001275BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97093D3B1C913506001275BC /* AppDelegate.swift */; };
-		97093D3E1C913506001275BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97093D3D1C913506001275BC /* ViewController.swift */; };
+		97093D3E1C913506001275BC /* OldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97093D3D1C913506001275BC /* OldViewController.swift */; };
 		97093D411C913506001275BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97093D3F1C913506001275BC /* Main.storyboard */; };
 		97093D431C913506001275BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97093D421C913506001275BC /* Assets.xcassets */; };
 		97093D461C913506001275BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97093D441C913506001275BC /* LaunchScreen.storyboard */; };
@@ -29,9 +32,12 @@
 		84598E901DC83AF0002B44B1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		84598E921DC848CD002B44B1 /* CorrectSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = CorrectSound.wav; path = "MMA Trivia/CorrectSound.wav"; sourceTree = "<group>"; };
 		84598E931DC848CD002B44B1 /* IncorrectSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = IncorrectSound.wav; path = "MMA Trivia/IncorrectSound.wav"; sourceTree = "<group>"; };
+		84B8536223FDF091001A67C4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		84B8536423FE2A79001A67C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84B8536623FE4559001A67C4 /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		97093D381C913506001275BC /* MMA Trivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MMA Trivia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97093D3B1C913506001275BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "MMA Trivia/AppDelegate.swift"; sourceTree = "<group>"; };
-		97093D3D1C913506001275BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "MMA Trivia/ViewController.swift"; sourceTree = "<group>"; };
+		97093D3D1C913506001275BC /* OldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OldViewController.swift; path = "MMA Trivia/OldViewController.swift"; sourceTree = "<group>"; };
 		97093D401C913506001275BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		97093D421C913506001275BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "MMA Trivia/Assets.xcassets"; sourceTree = "<group>"; };
 		97093D451C913506001275BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +55,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84B8536823FE456A001A67C4 /* Refactored Code */ = {
+			isa = PBXGroup;
+			children = (
+				84B8536423FE2A79001A67C4 /* ViewController.swift */,
+				84B8536623FE4559001A67C4 /* Library.swift */,
+			);
+			name = "Refactored Code";
+			sourceTree = "<group>";
+		};
+		84B8536923FE4582001A67C4 /* Old Code */ = {
+			isa = PBXGroup;
+			children = (
+				97093D3D1C913506001275BC /* OldViewController.swift */,
+				7377AB521D93828900B7BD3F /* Questions.swift */,
+				7377AB541D93840400B7BD3F /* QuestionDetail.swift */,
+			);
+			name = "Old Code";
+			sourceTree = "<group>";
+		};
 		97093D2F1C913506001275BC = {
 			isa = PBXGroup;
 			children = (
@@ -70,9 +95,9 @@
 			isa = PBXGroup;
 			children = (
 				97093D3B1C913506001275BC /* AppDelegate.swift */,
-				97093D3D1C913506001275BC /* ViewController.swift */,
-				7377AB521D93828900B7BD3F /* Questions.swift */,
-				7377AB541D93840400B7BD3F /* QuestionDetail.swift */,
+				84B8536823FE456A001A67C4 /* Refactored Code */,
+				84B8536923FE4582001A67C4 /* Old Code */,
+				84B8536223FDF091001A67C4 /* Extensions.swift */,
 				97093D3F1C913506001275BC /* Main.storyboard */,
 				97093D421C913506001275BC /* Assets.xcassets */,
 				97093D441C913506001275BC /* LaunchScreen.storyboard */,
@@ -112,19 +137,19 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Brandon Mahoney";
 				TargetAttributes = {
 					97093D371C913506001275BC = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = B29P2M257D;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
 			buildConfigurationList = 97093D331C913506001275BC /* Build configuration list for PBXProject "MMA Trivia" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -163,10 +188,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B8536323FDF091001A67C4 /* Extensions.swift in Sources */,
+				84B8536723FE4559001A67C4 /* Library.swift in Sources */,
 				7377AB531D93828900B7BD3F /* Questions.swift in Sources */,
-				97093D3E1C913506001275BC /* ViewController.swift in Sources */,
+				97093D3E1C913506001275BC /* OldViewController.swift in Sources */,
 				7377AB551D93840400B7BD3F /* QuestionDetail.swift in Sources */,
 				97093D3C1C913506001275BC /* AppDelegate.swift in Sources */,
+				84B8536523FE2A79001A67C4 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +226,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -241,11 +270,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -253,6 +283,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -290,10 +321,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -308,7 +340,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.brandonmahoney.MMATrivia;
 				PRODUCT_NAME = "MMA Trivia";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -323,7 +355,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.brandonmahoney.MMATrivia;
 				PRODUCT_NAME = "MMA Trivia";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

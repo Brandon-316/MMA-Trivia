@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dUn-MQ-wOe">
-    <device id="retina5_5" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dUn-MQ-wOe">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,11 +15,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Omu-Se-QNx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ka9-C0-K9d">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLX-Ln-OsX">
-                                <rect key="frame" x="192" y="686" width="30" height="30"/>
+                                <rect key="frame" x="192" y="812" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="Qgg-lc-aet"/>
                                     <constraint firstAttribute="height" constant="30" id="yQN-Pw-PiR"/>
@@ -32,7 +29,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="5kI-Ak-YzC" userLabel="Button Stack">
-                                <rect key="frame" x="30" y="152.33333333333337" width="354" height="490"/>
+                                <rect key="frame" x="30" y="239" width="354" height="490"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="1" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXD-LC-EvE">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="66"/>
@@ -47,8 +44,8 @@
                                             <action selector="checkAnswer:" destination="dUn-MQ-wOe" eventType="touchUpInside" id="qDD-aU-s8O"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="2" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jlx-L7-fJf">
-                                        <rect key="frame" x="0.0" y="105.99999999999997" width="354" height="66"/>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" restorationIdentifier="2" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jlx-L7-fJf">
+                                        <rect key="frame" x="0.0" y="106" width="354" height="66"/>
                                         <color key="backgroundColor" red="0.20784313730000001" green="0.47058823529999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Jlx-L7-fJf" secondAttribute="height" multiplier="59:11" id="8L9-hi-45J"/>
@@ -60,8 +57,8 @@
                                             <action selector="checkAnswer:" destination="dUn-MQ-wOe" eventType="touchUpInside" id="nAe-3h-iOO"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="3" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pz6-th-zzO">
-                                        <rect key="frame" x="0.0" y="211.99999999999997" width="354" height="66.000000000000028"/>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" restorationIdentifier="3" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pz6-th-zzO">
+                                        <rect key="frame" x="0.0" y="212" width="354" height="66"/>
                                         <color key="backgroundColor" red="0.20784313730000001" green="0.47058823529999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="pz6-th-zzO" secondAttribute="height" multiplier="59:11" id="za2-7f-IPs"/>
@@ -73,7 +70,7 @@
                                             <action selector="checkAnswer:" destination="dUn-MQ-wOe" eventType="touchUpInside" id="bwW-Nf-dIn"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="4" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Md-JW-tg8">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" restorationIdentifier="4" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Md-JW-tg8">
                                         <rect key="frame" x="0.0" y="318" width="354" height="66"/>
                                         <color key="backgroundColor" red="0.20784313730000001" green="0.47058823529999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -96,22 +93,22 @@
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Play Again"/>
                                         <connections>
-                                            <action selector="playAgain" destination="dUn-MQ-wOe" eventType="touchUpInside" id="Vi9-kE-RlJ"/>
+                                            <action selector="playAgainTapped:" destination="dUn-MQ-wOe" eventType="touchUpInside" id="pRE-pm-hWO"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rii-mk-IAa" userLabel="Label Stack">
-                                <rect key="frame" x="30" y="39.999999999999993" width="354" height="82.333333333333314"/>
+                                <rect key="frame" x="30" y="64" width="354" height="145"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which dog is the most stubborn?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="db8-Pk-4g3">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="44.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="107"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sorry, that's not it." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XA2-dc-x48">
-                                        <rect key="frame" x="0.0" y="52.333333333333329" width="354" height="30"/>
+                                        <rect key="frame" x="0.0" y="115" width="354" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="jFu-a5-JJ2"/>
                                         </constraints>

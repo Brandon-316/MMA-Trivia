@@ -19,7 +19,7 @@ struct Questions {
             "Answer": "3"
         ],
         [
-            "Question": "Who are the only 2 UFC fighter to win belts in two different divisions?",
+            "Question": "Which 2 UFC fighters have won belts in two different divisions?",
             "Option1": "BJ Penn and Robbie Lawler",
             "Option2": "BJ Penn and Randy Couture",
             "Option3": "Robbie Lawler and Randy Couture",
@@ -47,7 +47,6 @@ struct Questions {
             "Option1": "Michael Bisping",
             "Option2": "Mirko Cro Cop Filipovic",
             "Option3": "Mark Hunt",
-            "Option4": "",
 //            "Option4": "Dan Hardy",
             "Answer": "2"
         ],
@@ -56,7 +55,6 @@ struct Questions {
             "Option1": "Chuck Liddell",
             "Option2": "Pat Smith",
             "Option3": "Terry Etim",
-            "Option4": "",
 //            "Option4": "Jens Pulver",
             "Answer": "3"
         ],
